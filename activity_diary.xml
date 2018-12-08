@@ -20,50 +20,50 @@
             android:src="@drawable/logo"/>
 
         <Button
-            android:id="@+id/home"
+            android:id="@+id/withInCity"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="Home"
+            android:text="With in city Trips"
             android:background="#6364b4"
             android:textColor="#ffff"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"/>
 
         <Button
-            android:id="@+id/diary"
+            android:id="@+id/outOfCity"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="My Diary"
-            android:background="#6364b4"
-            android:textColor="#ffff"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:background="#6364b4"
+            android:text="Out of city trips"
+            android:textColor="#ffff" />
 
         <Button
-            android:id="@+id/wish"
+            android:id="@+id/outOfState"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="Wish List"
-            android:background="#6364b4"
-            android:textColor="#ffff"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:background="#6364b4"
+            android:text="Out of state trips"
+            android:textColor="#ffff" />
 
         <Button
-            android:id="@+id/edit"
+            android:id="@+id/upload"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="Edit Profile"
-            android:background="#6364b4"
-            android:textColor="#ffff"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:background="#6364b4"
+            android:text="Upload Picture"
+            android:textColor="#ffff" />
 
         <Button
-            android:id="@+id/logout"
+            android:id="@+id/back"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="Log out"
+            android:text="Back"
             android:background="#6364b4"
             android:textColor="#f50404"
             android:layout_gravity="center"

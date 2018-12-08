@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Profile Info"
+            android:text="Update Profile"
             android:textAllCaps="true"
             android:textColor="#ffff"
             android:textStyle="bold"
@@ -22,7 +22,7 @@
             android:layout_marginTop="30dp"/>
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/name1"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:hint="Name"
@@ -31,25 +31,25 @@
             android:layout_marginTop="50dp"/>
 
         <EditText
-            android:id="@+id/age"
+            android:id="@+id/age1"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:hint="Age"
             android:background="#ffff"
             android:layout_gravity="center"
-           />
+            />
 
         <EditText
-            android:id="@+id/city"
+            android:id="@+id/city1"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:hint="City"
             android:background="#ffff"
             android:layout_gravity="center"
-           />
+            />
 
         <EditText
-            android:id="@+id/country"
+            android:id="@+id/country1"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:hint="Country"
@@ -58,7 +58,7 @@
             />
 
         <EditText
-            android:id="@+id/phone"
+            android:id="@+id/phone1"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:hint="Contact Number"
@@ -67,10 +67,10 @@
             android:layout_gravity="center" />
 
         <Button
-            android:id="@+id/svbutton"
+            android:id="@+id/upbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:text="Update"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"/>
 

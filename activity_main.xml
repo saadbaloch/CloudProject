@@ -2,59 +2,84 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/loginbackground"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.saad.cloud_project.MainActivity">
+    tools:context="com.example.saad.traveljournal.MainActivity">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="230dp"
-        android:src="@drawable/travel2" />
+        <ImageView
+            android:id="@+id/Logo"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"/>
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toLeftOf="@+id/Logo"
+            android:text="Sign up"
+            android:textAllCaps="true"
+            android:textColor="#ffff"
+            android:textStyle="bold"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="Username"
+            android:background="#ffff"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:background="#ffff"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up As new user"
+            android:layout_gravity="center"/>
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"/>
-
-        <EditText
-            android:id="@+id/edittex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:digits="0123456789+"
-            android:hint="Phone number"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"/>
-
-        <Button
-            android:id="@+id/sign_in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign in"
-            android:typeface="sans"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:textAllCaps="false"/>
-
-
-
+            android:layout_gravity="center" />
 
 
 
     </LinearLayout>
-
 
 
 </RelativeLayout>

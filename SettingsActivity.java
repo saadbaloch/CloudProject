@@ -1,58 +1,68 @@
-package com.example.saad.cloud_project;
+package com.example.saad.traveljournal;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.facebook.Profile;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    EditText name;
+    EditText age;
+    EditText city;
+    EditText country;
+    EditText phone;
+    private DatabaseReference mDatabaseRef;
+
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        ImageView img= findViewById(R.id.imageView);
-        EditText editText= findViewById(R.id.editText2);
+        mDatabaseRef= FirebaseDatabase.getInstance().getReference();
 
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+        name=findViewById(R.id.name);
+        age=findViewById(R.id.age);
+        city=findViewById(R.id.city);
+        country=findViewById(R.id.country);
+        phone=findViewById(R.id.phone);
+        btn=findViewById(R.id.svbutton);
 
-        if (acct != null) {
-            Toast.makeText(getApplicationContext(),"Through google.", Toast.LENGTH_SHORT).show();
-            String personName = acct.getDisplayName();
-            Uri personPhoto = acct.getPhotoUrl();
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 String name1= name.getText().toString().trim();
+                 String age1= age.getText().toString().trim();
+                 String city1= city.getText().toString().trim();
+                 String country1= country.getText().toString().trim();
+                 String phone1= phone.getText().toString().trim();
 
-            editText.setText(personName);
-            new ImageDownloaderAsync(img,getApplicationContext()).execute(acct.getPhotoUrl().toString());
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid=user.getUid();
+
+                DatabaseReference ref= mDatabaseRef.child("Users").child(uid).child("Profile");
+                String key=ref.push().getKey();
+
+                ProfileInfo prof=new ProfileInfo(uid,key,name1,age1,city1,country1,phone1);
 
 
-        }
+                ref.setValue(prof);
 
-        else if(Profile.getCurrentProfile()!=null) {
-            Toast.makeText(getApplicationContext(),"Through facebook.", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(),Home.class);
+                finish();
+                startActivity(i);
+            }
+        });
 
-            editText.setText(Profile.getCurrentProfile().getName());
 
-
-        }
-
-    }
-
-    public void onClick()
-    {
 
     }
 }

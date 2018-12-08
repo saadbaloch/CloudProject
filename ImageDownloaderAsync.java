@@ -1,22 +1,19 @@
-package com.example.saad.cloud_project;
+package com.example.saad.traveljournal;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.util.Log;
+import android.widget.ImageView;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
- * Created by saad on 27/10/2018.
+ * Created by saad on 09/12/2018.
  */
-
-
-        import android.content.Context;
-        import android.graphics.Bitmap;
-        import android.graphics.BitmapFactory;
-        import android.os.AsyncTask;
-        import android.util.Log;
-        import android.widget.ImageView;
-
-        import java.io.InputStream;
-        import java.net.HttpURLConnection;
-        import java.net.URL;
-
-
 
 public class ImageDownloaderAsync extends AsyncTask<String, Void, Bitmap> {
 
@@ -52,4 +49,3 @@ public class ImageDownloaderAsync extends AsyncTask<String, Void, Bitmap> {
         return bmp;
     }
 }
-
